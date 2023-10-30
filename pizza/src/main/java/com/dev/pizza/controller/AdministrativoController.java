@@ -215,7 +215,7 @@ public class AdministrativoController {
                         pizza.getNomepizza(), 
                         String.valueOf(CookieService.getCookie(request, "clienteid")), 
                         String.valueOf(CookieService.getCookie(request, "tokenacesso")),
-                        pizza.getPrecopizza());
+                        pizza.getPrecopizza(), 1);
         itemRepository.save(item);
         redirectAttributes.addFlashAttribute("pizzaList", pizzaRepository.findAll());
         redirectAttributes.addFlashAttribute("bebidaList", bebidaRepository.findAll());
@@ -234,7 +234,7 @@ public class AdministrativoController {
                             bebida.getBebidanome(),
                             String.valueOf(CookieService.getCookie(request, "clienteid")), 
                             String.valueOf(CookieService.getCookie(request, "tokenacesso")),
-                            bebida.getBebidapreco());
+                            bebida.getBebidapreco(), 1);
         itemRepository.save(item);        
         redirectAttributes.addFlashAttribute("pizzaList", pizzaRepository.findAll());
         redirectAttributes.addFlashAttribute("bebidaList", bebidaRepository.findAll());

@@ -18,17 +18,18 @@ public class Item {
     private String clienteid;
     private String tokenacesso;
     private float valoritem;
-    
+    private int quantidade;
 
     public Item() {
     
     }
 
-    public Item(Long itemid, String nomeitem, String clienteid, String tokenacesso, float valoritem){
+    public Item(Long itemid, String nomeitem, String clienteid, String tokenacesso, float valoritem, int quantidade){
         this.itemid = itemid;
         this.nomeitem = nomeitem;
         this.clienteid = clienteid;
         this.tokenacesso = tokenacesso;
         this.valoritem = valoritem;
+        this.quantidade = quantidade;
     }
 }

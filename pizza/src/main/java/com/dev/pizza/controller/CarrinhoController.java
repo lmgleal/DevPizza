@@ -57,7 +57,7 @@ public class CarrinhoController {
                                                                             request, "tokenacesso"))));
         } catch (Exception e) {
             modelAndView.addObject("valoraux", 0);
-            modelAndView.addObject("msg", "Insira itens em seu carrinho!");
+            modelAndView.addObject("msg2", "Insira itens em seu carrinho!");
         }
         modelAndView.addObject("tokenacesso", token);
         modelAndView.addObject("clienteaux", cliente.getNome());

@@ -74,7 +74,8 @@
                <table id="tabela_carrinho">
                     <thead>
                         <tr>
-                            <th>Produtos</th>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
                             <th>Ação</th>
                         </tr>
                     </thead>
@@ -83,11 +84,13 @@
                             <tr scope="row" th:each="itped : ${itemList}">
 
 								<td th:text="${itped.nomeitem}"></td>
+                                <td th:text="${itped.quantidade}"></td>
 							    <td>
                                     <div>
                                         <a class="redirectBt" th:href="@{removeritem/{mandatory}(mandatory=${itped.mandatory})}">
                                             <i></i> Remover</a>
                                     </div>  
+                                </td>
                         </tr>
                     </tbody>
                </table> 
@@ -133,8 +136,10 @@
                                     th:value="${statuspedido}" th:text="${statuspedido}"></option>
                                 </select>
                             
-                            <button th:if="${msg == null}" text-align="right" type="submit" class="btn btn-primary btn-sm offset-md-8">Fazer Pedido</button>
+                            <button th:if="${msg2 == null}" text-align="right" type="submit" class="redirectBt">Fazer Pedido</button>
                             <div th:if="${msg != null}" th:text="${msg}" class="alert alert-danger" role="alert"></div>
+                            <div th:if="${msg2 != null}" th:text="${msg2}" class="alert alert-danger" role="alert"></div>
+                            
                     </form>
                 
                 </section>

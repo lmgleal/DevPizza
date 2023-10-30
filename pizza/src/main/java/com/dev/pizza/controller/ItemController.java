@@ -61,7 +61,7 @@ public class ItemController {
                         pizza.getNomepizza(), 
                         String.valueOf(CookieService.getCookie(request, "clienteid")), 
                         String.valueOf(CookieService.getCookie(request, "tokenacesso")),
-                        pizza.getPrecopizza());
+                        pizza.getPrecopizza(), 1);
         itemRepository.save(item);
         redirectAttributes.addFlashAttribute("pizzaList", pizzaRepository.findAll());
         redirectAttributes.addFlashAttribute("bebidaList", bebidaRepository.findAll());
@@ -69,7 +69,7 @@ public class ItemController {
     }
 
     @GetMapping("/addbv/{bebidaid}")
-    public ModelAndView addBv(@PathVariable("bebidaid") Long bebidaid, 
+    public ModelAndView addBv(@PathVariable("bebidaid") Long bebidaid,  
                                 RedirectAttributes redirectAttributes, 
                                 HttpServletRequest request){
 
@@ -80,7 +80,7 @@ public class ItemController {
                             bebida.getBebidanome(),
                             String.valueOf(CookieService.getCookie(request, "clienteid")), 
                             String.valueOf(CookieService.getCookie(request, "tokenacesso")),
-                            bebida.getBebidapreco());
+                            bebida.getBebidapreco(), 1);
         itemRepository.save(item);        
         redirectAttributes.addFlashAttribute("pizzaList", pizzaRepository.findAll());
         redirectAttributes.addFlashAttribute("bebidaList", bebidaRepository.findAll());

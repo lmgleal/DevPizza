@@ -34,12 +34,7 @@
             background-color: #fbfdff;
             color: rgb(8, 8, 8);
         }
-        th,
-        td {
-            width: 150px;
-            text-align: center;
-            padding: 5px;
-        }
+        
     </style>
 
 </head>
@@ -75,18 +70,18 @@
                <table id="tabela_carrinho">
                     <thead>
                         <tr>
-	                        <th>#</th>
 	                        <th>Nome do Produto</th>
 	                        <th>Valor</th>
+                            <th>Quantidade</th>
 	                    </tr>
 	                    </thead>
 	                    <tbody>
 	                    <tr>
 	                        <tr scope="row" th:each="itens : ${itemList}">
 
-								<td th:text="${itens.itemid}"></td>
 								<td th:text="${itens.nomeitem}"></td>
 								<td th:text="${itens.valoritem}"></td>
+                                <td th:text="${itens.quantidade}"></td>
 								
 	                    </tr>
 	                    </tbody>
